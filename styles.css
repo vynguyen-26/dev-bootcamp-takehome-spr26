@@ -35,27 +35,29 @@ body{
     background-color: #fdbfcb;
     text-align: left;
     padding: 20px;
-    line-height: 1.5;
+    line-height: 1.7;
     border-radius: 30px;
+    min-height: 180px;
+    display: flex;
+    align-items: flex-start;
 }
 
 .info-text{
     color: #C68581;
     position: inherit;
-    margin: 0;
+    margin: 10;
     display: inline-block;
     overflow: hidden;
-    white-space: nowrap;
-    animation: typing 4s steps(100, end) forwards;
     border-right: 3px solid #C68581;
-    animation: typing 4s steps(100, end) forwards, blink-caret .75s step-end infinite;
+    animation: typing 4s steps(100, end) forwards, hide-border 0s 1.5s forwards;
+    max-width: 100%;
+    max-height: 0;
 }
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from { max-height: 0 }
+    to { max-height: 500px}
 }
-@keyframes blink-caret {
-    0%, 100% { border-right-color: transparent }
-    50% { border-right-color: #C68581 }
+@keyframes hide-border {
+    to { border-right-color: transparent; }
 }
